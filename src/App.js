@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+import React from 'react';
+import Header from './components/header';        // Ensure this matches the actual filename on disk
+import Footer from './components/footer';        // Ensure this matches the actual filename on disk
+import MatchMaker from './components/matchmaker'; // Ensure this matches the actual filename on disk
+import Login from './components/login';          // Ensure this matches the actual filename on disk
+import Signup from './components/Signup';         // Ensure this matches the actual filename on disk
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <div className="App">
+            <Header />
+            <div style={mainContentStyle}>
+                <Login />
+                <Signup />
+                <MatchMaker />
+            </div>
+            <Footer />
+        </div>
+    );
+};
+
+const mainContentStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '20px',
+};
 
 export default App;
